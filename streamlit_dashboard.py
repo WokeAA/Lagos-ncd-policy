@@ -126,6 +126,9 @@ def lagos_choropleth(lga_values: dict, title: str, color_scale: str = "YlGnBu",
     else:
         zmin, zmax = 0.0, 1.0
 
+    # Fill NaN → 0 so no LGA renders as grey
+    df["value"] = df["value"].fillna(0)
+
     fig = px.choropleth_mapbox(
         df,
         geojson=lagos_gj,

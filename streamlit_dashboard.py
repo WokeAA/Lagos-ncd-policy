@@ -142,25 +142,24 @@ def lagos_choropleth(lga_values: dict, title: str, color_scale: str = "YlGnBu",
         hover_name="lga_canonical",
     )
     
-    # Sharp LGA administrative boundary strokes
+    # Sharp LGA administrative boundary strokes + colorbar on trace
     fig.update_traces(
         marker_line_width=1.8,
         marker_line_color="#1A1A2E",
-        hovertemplate="<b>LGA Name: %{location}</b><br>" + value_label + ": <b>%{z:,.1f}</b><extra></extra>"
+        hovertemplate="<b>LGA Name: %{location}</b><br>" + value_label + ": <b>%{z:,.1f}</b><extra></extra>",
+        colorbar=dict(
+            title=value_label, thickness=12, len=0.75,
+            x=0.98, outlinewidth=0, ticks="outside",
+            titlefont=dict(size=11, color="#1A1A2E"),
+            tickfont=dict(size=10, color="#1A1A2E")
+        )
     )
-    
+
     fig.update_layout(
         title=dict(text=title, x=0.5, font=dict(size=14, color="#1A1A2E", family="Segoe UI")),
         margin=dict(t=40, b=10, l=10, r=10),
         height=480, autosize=True,
         paper_bgcolor="white",
-        plot_bgcolor="white",
-        coloraxis_colorbar=dict(
-            title=value_label, thickness=12, len=0.75,
-            x=0.98, outlinewidth=0, ticks="outside",
-            titlefont=dict(size=11, color="#1A1A2E"),
-            tickfont=dict(size=10, color="#1A1A2E")
-        ),
     )
     
     if center_lga:

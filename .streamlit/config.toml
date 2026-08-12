@@ -1,0 +1,42 @@
+# =============================================================================
+# Streamlit Theme Configuration — Lagos NCD Thesis
+# =============================================================================
+# Brand palette:
+#   Nigeria green (primary):    #008751
+#   Lagos teal-blue (secondary): #00897B
+#   Warm gold (accent):         #F9A825
+#   Dark slate (text):          #1A1A2E
+#   Light grey (background):    #F5F7FA
+#
+# Project Owner: Oghenewoke Atariata
+# Author: Lawrence Oladeji — Data Analyst / Scientist / ML Expert
+# =============================================================================
+
+[theme]
+# Use our custom light theme
+base = "light"
+
+# Primary color — Nigeria green. Used for buttons, sliders, active widgets.
+primaryColor = "#008751"
+
+# Background — soft off-white for less eye strain than pure white
+backgroundColor = "#FFFFFF"
+
+# Secondary background — light grey for sidebars and cards
+secondaryBackgroundColor = "#F5F7FA"
+
+# Text color — dark slate (softer than pure black)
+textColor = "#1A1A2E"
+
+# Font — system fonts for cross-platform consistency
+font = "sans serif"
+
+[server]
+# Run on all interfaces so the dashboard is accessible on the local network
+address = "0.0.0.0"
+port = 8501
+headless = true
+
+[browser]
+# Open the dashboard in the browser automatically
+gatherUsageStats = false

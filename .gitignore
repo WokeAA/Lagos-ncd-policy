@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+st_err.log
+st_out.log
+.DS_Store
+.vscode/
+.idea/
